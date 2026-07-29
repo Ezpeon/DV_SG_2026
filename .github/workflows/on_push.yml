@@ -1,0 +1,27 @@
+name: On_push
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: |
+          pip install -r app_requirements.txt
+          pip install -r prep_requirements.txt
+          pip install -r dev_requirements.txt
+
+      - name: Black check
+        run: black --check webapp local_prep
+
+      - name: Mypy check
+        run: mypy webapp local_prep

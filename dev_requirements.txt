@@ -1,0 +1,4 @@
+mypy
+black==26.5.1
+pre-commit
+pandas-stubs
