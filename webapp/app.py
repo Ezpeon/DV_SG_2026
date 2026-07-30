@@ -204,6 +204,13 @@ with col_g:
 
 st.divider()  ################################################################
 
+st.subheader("The divergence in numbers")
+st.write(
+    "Households have held roughly 3-7% of their portfolios in alternatives since 1992, while institutional allocations climbed from 15% in 2019 to 31% in 2025."
+)
+
+st.divider()  ################################################################
+
 col_g, col_t = st.columns([3, 2])
 
 with col_g:
@@ -212,7 +219,7 @@ with col_g:
     selected = st.multiselect(
         "Assets to show",
         options=list(SEC3_SERIES.keys()),
-        default=["S&P 500", "Bitcoin", "Pokemon Cards"],
+        default=["S&P 500", "Bitcoin", "Luxury Watches"],
     )
 
     fig3 = go.Figure()
@@ -274,7 +281,7 @@ with col_g:
 with col_t:
     st.header("3. If I invested €100 in 2021 ...")
     st.write(
-        "Compare the performance of traditional investments (S&P 500) against various alternatives³."
+        "Some alternatives have beaten the S&P 500 over this period, others have lagged behind³."
     )
 
 
